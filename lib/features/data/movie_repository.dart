@@ -17,7 +17,6 @@ class MovieRepository {
         // Decode the JSON response as a List of dynamic
         final List<dynamic> moviesJson =
             json.decode(response.body) as List<dynamic>;
-        print(moviesJson);
 
         // Map each element of the list to a Movie object
         return moviesJson.map((movieJson) {
@@ -44,20 +43,6 @@ class MovieRepository {
       throw Exception('Movie or time slot not found');
     } else {
       throw Exception('Failed to check availability');
-    }
-  }
-
-  // Method to update booked count for a specific time slot
-  Future<void> updateBookedCount(
-      String movieId, int timeSlotId, int numberOfPeople) async {
-    final response = await http.put(
-      Uri.parse('$baseUrl/reservations/$movieId/timeslots/$timeSlotId/book'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({'numberOfPeople': numberOfPeople}),
-    );
-
-    if (response.statusCode != 200) {
-      throw Exception('Failed to update booked count');
     }
   }
 }

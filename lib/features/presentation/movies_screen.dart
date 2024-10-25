@@ -5,6 +5,8 @@ import '../../config.dart';
 import '../data/movie_repository.dart';
 import '../models/movie.dart';
 import 'reservation_screen.dart';
+import 'widgets/background_gradinet.dart';
+import 'widgets/background_image.dart';
 import 'widgets/movie_card.dart';
 import 'widgets/roundedButton.dart';
 
@@ -115,29 +117,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
           : Stack(
               children: [
                 // Display the background image of the currently selected movie
-                Positioned.fill(
-                  child: Image.network(
-                    _movies[_current].thumbnailUrl,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                BackgroundImage(movies: _movies, current: _current),
                 // Overlay a gradient on top of the background image for better readability
-                Positioned.fill(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.grey.shade50.withOpacity(1),
-                          Colors.grey.shade50.withOpacity(0.8),
-                          Colors.grey.shade50.withOpacity(0.5),
-                          Colors.transparent,
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                const BackgroundGradient(),
                 // Carousel slider with the movie list
                 Positioned(
                   bottom: 0,

@@ -22,7 +22,7 @@ class ReservationRepository {
           'timeSlotIndex': timeSlotIndex
         }),
       );
-
+      print(response);
       if (response.statusCode == 201) {
         final newReservation = Reservation(
           movieId: movieId,
@@ -35,7 +35,7 @@ class ReservationRepository {
         return null;
       }
     } catch (e) {
-      throw Exception('Error reserving time slot: $e');
+      throw Exception('Error reserving time slot: \$e');
     }
   }
 }
