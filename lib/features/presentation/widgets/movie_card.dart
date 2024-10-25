@@ -88,7 +88,7 @@ class _MovieCardState extends State<MovieCard> {
                       Text(
                         "${timeSlot.startTime} (${timeSlot.bookedCount}/${timeSlot.capacity} booked)",
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 9,
                           color: Colors.grey.shade600,
                         ),
                       ),
