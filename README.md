@@ -1,5 +1,3 @@
-# movie_app
-
 # Movie App (Frontend - Flutter)
 
 This project is a Flutter-based mobile application designed to display a list of movies, allowing users to book movie slots by communicating with a backend server. The backend manages movie listings, available time slots, and reservation capacity. The Flutter frontend handles user interaction, such as listing movies, checking availability, and processing reservations.
