@@ -60,12 +60,14 @@ class _MoviesScreenState extends State<MoviesScreen> {
                       timeSlotIndex: timeSlotIndex,
                     )),
           );
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Reservation made for ${movie.title}'),
-              backgroundColor: Colors.green,
-            ),
-          );
+          if (result != null) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Reservation made for ${movie.title}'),
+                backgroundColor: Colors.green,
+              ),
+            );
+          }
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -129,6 +131,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
                         viewportFraction: 0.7,
                         enlargeCenterPage: true,
                         onPageChanged: (index, reason) {
+                          setState(() {
+                            _current = index;
+                          });
                           movieIndex = index;
                           _selectedTimeSlot =
                               null; // Reset selected time slot when changing movie
@@ -137,7 +142,6 @@ class _MoviesScreenState extends State<MoviesScreen> {
                       itemBuilder:
                           (BuildContext context, int index, int realIndex) {
                         final movie = _movies[index];
-                        ;
 
                         return SingleChildScrollView(
                           child: Column(
