@@ -36,7 +36,7 @@ Before starting, make sure you have the following installed:
    This Flutter project relies on a backend server to fetch movie data and handle bookings. You need to set up and run the backend project first.
    
    - Clone and run the backend repository from [Movie Backend](https://github.com/NawaF-Alfawaz/movie_backend).
-   - Follow the backend setup instructions to start the server (usually using Node.js).
+   - Follow the backend setup instructions to start the server.
 
 4. **Update Backend URL**
    
