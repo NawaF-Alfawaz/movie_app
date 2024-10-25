@@ -85,5 +85,5 @@ Before starting, make sure you have the following installed:
 
 ---
 
-If you have any questions or run into issues, feel free to raise them in the GitHub repository or contact the maintainer.
+If you have any questions or run into issues, feel free to contact me at nawaf.alfawaz55@gmail.com
 
